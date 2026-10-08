@@ -1,0 +1,659 @@
+{
+  "info": {
+    "_postman_id": "e88c66fa-3794-40a6-93a8-7d85194440f5",
+    "name": "Swagger Petstore - Manual API Testing",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52883619",
+    "_collection_link": "https://go.postman.co/collection/52883619-e88c66fa-3794-40a6-93a8-7d85194440f5?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "01 - Pet",
+      "item": [
+        {
+          "name": "01 - Create Pet - Positive",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\": 123456,\r\n    \"category\": {\r\n        \"id\": 1,\r\n        \"name\": \"Dogs\"\r\n    },\r\n    \"name\": \"Rex QA\",\r\n    \"photoUrls\": [\r\n        \"https://example.com/rex.jpg\"\r\n    ],\r\n    \"tags\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"test\"\r\n        }\r\n    ],\r\n    \"status\": \"available\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/pet",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pet"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "02 - Get Pet by ID - Positive",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/pet/123456",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pet",
+                "123456"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "03 - Update Pet - Positive",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\": 123456,\r\n    \"category\": {\r\n        \"id\": 1,\r\n        \"name\": \"Dogs\"\r\n    },\r\n    \"name\": \"Rex QA Updated\",\r\n    \"photoUrls\": [\r\n        \"https://example.com/rex-updated.jpg\"\r\n    ],\r\n    \"tags\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"updated\"\r\n        }\r\n    ],\r\n    \"status\": \"sold\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/pet",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pet"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "04 - Get Updated Pet - Positive",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/pet/123456",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pet",
+                "123456"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "05 - Delete Pet - Positive",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/pet/123456",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pet",
+                "123456"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "02 - Store",
+      "item": [
+        {
+          "name": "01 - Get Inventory - Positive",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/store/inventory",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "store",
+                "inventory"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "02 - Create Order - Positive",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\": 789,\r\n    \"petId\": 123456,\r\n    \"quantity\": 1,\r\n    \"shipDate\": \"2026-10-06T12:00:00.000Z\",\r\n    \"status\": \"placed\",\r\n    \"complete\": false\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/store/order",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "store",
+                "order"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "03 - Get Order by ID - Positive",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/store/order/789",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "store",
+                "order",
+                "789"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "04 - Delete Order - Positive",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/store/order/789",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "store",
+                "order",
+                "789"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "03 - User",
+      "item": [
+        {
+          "name": "01 - Create User - Positive",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\": 555,\r\n    \"username\": \"qa_student_555\",\r\n    \"firstName\": \"Ekaterina\",\r\n    \"lastName\": \"QA\",\r\n    \"email\": \"qa.student.555@example.com\",\r\n    \"password\": \"Test12345\",\r\n    \"phone\": \"+491234567890\",\r\n    \"userStatus\": 1\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/user",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "user"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "02 - Get User - Positive",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/user/qa_student_555",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "user",
+                "qa_student_555"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "03 - Update User - Positive",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\": 555,\r\n    \"username\": \"qa_student_555\",\r\n    \"firstName\": \"Ekaterina Updated\",\r\n    \"lastName\": \"QA\",\r\n    \"email\": \"qa.updated.555@example.com\",\r\n    \"password\": \"Test12345\",\r\n    \"phone\": \"+491234567890\",\r\n    \"userStatus\": 1\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/user/qa_student_555",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "user",
+                "qa_student_555"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "04 - Login User - Positive",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/user/login?username=qa_student_555&password=Test12345",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "user",
+                "login"
+              ],
+              "query": [
+                {
+                  "key": "username",
+                  "value": "qa_student_555"
+                },
+                {
+                  "key": "password",
+                  "value": "Test12345"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "05 - Logout User - Positive",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/user/logout",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "user",
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "06 - Delete User - Positive",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/user/qa_student_555",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "user",
+                "qa_student_555"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "04 - E2E Scenario",
+      "item": [
+        {
+          "name": "01 — Create Pet - E2E",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\": 654321,\r\n    \"category\": {\r\n        \"id\": 1,\r\n        \"name\": \"Dogs\"\r\n    },\r\n    \"name\": \"Rex QA\",\r\n    \"photoUrls\": [\r\n        \"https://example.com/rex.jpg\"\r\n    ],\r\n    \"tags\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"test\"\r\n        }\r\n    ],\r\n    \"status\": \"available\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/pet",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pet"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "02 — Get Pet - E2E",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/pet/654321",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pet",
+                "654321"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "03 — Update Pet - E2E",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": 654321,\r\n  \"category\": {\r\n    \"id\": 1,\r\n    \"name\": \"Dogs\"\r\n  },\r\n  \"name\": \"E2E Clinic Pet Updated\",\r\n  \"photoUrls\": [\r\n    \"https://example.com/e2e-pet-updated.jpg\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 1,\r\n      \"name\": \"e2e-updated\"\r\n    }\r\n  ],\r\n  \"status\": \"sold\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/pet",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pet"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "04 — Get Updated Pet - E2E",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/pet/654321",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pet",
+                "654321"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "05 — Create Order - E2E",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": 987654,\r\n  \"petId\": 654321,\r\n  \"quantity\": 1,\r\n  \"shipDate\": \"2026-10-07T12:00:00.000Z\",\r\n  \"status\": \"placed\",\r\n  \"complete\": false\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/store/order",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "store",
+                "order"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "06 — Get Order - E2E",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/store/order/987654",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "store",
+                "order",
+                "987654"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "07 — Delete Order - E2E",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/store/order/987654",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "store",
+                "order",
+                "987654"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "08 — Verify Order Deleted - E2E",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/store/order/987654",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "store",
+                "order",
+                "987654"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "09 — Delete Pet - E2E",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/pet/654321",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pet",
+                "654321"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "10 — Verify Pet Deleted - E2E",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/pet/654321",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pet",
+                "654321"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "05 - Negative Tests",
+      "item": [
+        {
+          "name": "01 - Get Deleted Pet - Negative",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/pet/123456",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pet",
+                "123456"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "01 - Get Non-existent Pet - Negative",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/pet/999999999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pet",
+                "999999999"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "02 - Invalid Pet ID - Negative",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/pet/abc",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pet",
+                "abc"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "03 - Get Non-existent Order - Negative",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/store/order/999999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "store",
+                "order",
+                "999999"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "04 - Get Non-existent User - Negative",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/user/user_that_does_not_exist_999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "user",
+                "user_that_does_not_exist_999"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
